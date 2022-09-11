@@ -19,4 +19,28 @@ services:
       - "./sql/init.sql:/docker-entrypoint-initdb.d/1.sql" # линкуем файл инициализации бд к файлу запуска
     environment:
       MYSQL_ROOT_PASSWORD: password # пароль нужно поставить, иначе заругает mysql
+
+  drawer:
+    container_name: Drawer
+    image: php:7.2-apache
+    ports:
+      - 1001:80
+    volumes:
+      - ./drawer:/var/www/html
     
+
+  sorter:
+    container_name: Sorter
+    image: php:7.2-apache
+    ports:
+      - 1002:80
+    volumes:
+      - ./sorter:/var/www/html
+
+  consoler:
+    container_name: Consoler
+    image: php:7.2-apache
+    ports:
+      - 1003:80
+    volumes:
+      - ./consoler:/var/www/html
