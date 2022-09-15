@@ -75,6 +75,8 @@
         
         $svg_code .= '</svg>';
         echo $svg_code;
+    } else {
+        echo "Ты не ввел параметр num. (localhost:1001/?num=2)";
     }
 ?>
 
